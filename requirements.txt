@@ -13,8 +13,6 @@ charset-normalizer==3.3.2
 click==8.1.7
 colorama==0.4.6
 docopt==0.6.2
-Flask==3.0.0
-Flask-JSGlue==0.3.1
 flatbuffers==23.5.26
 gast==0.5.4
 google-auth==2.25.2
