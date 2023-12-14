@@ -16,7 +16,7 @@
 - [Dataset Prepared](https://drive.google.com/drive/folders/1CTvT_gnTvwlcKwJ8yz4jUOs0JYTKrplA?usp=sharing)
 
 ## Demo
-![GIF](readme_resources/projectDemo.gif)
+<!-- ![GIF](readme_resources/projectDemo.gif) -->
 
 ## Deployment
 - Deployed using Azure Web App Service.

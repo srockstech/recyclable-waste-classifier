@@ -5,14 +5,15 @@
   <br>
 	<div class="row">
     <div class="col-md-6 classy_frame" style="padding-top: 0%;">
-      <center><h3 style="text-transform: capitalize;">Classify Your Waste Material</h3></center>
-      <img id="preview" src="{{ url_for('static', filename = 'images/reuse.png') }}" height="400px" width="100%" title = "client pic">
+      <center><h3 style="text-transform: capitalize;">Classify Waste</h3></center>
+      <br>
+      <center><img id="preview" src="{{ url_for('static', filename = 'images/waste_bins.png') }}" style="border-radius: 6px;" height="90%" width="90%" title = "client pic"></center>
       
       <center>
         <br>
         <div class="image-upload">
-          <p style="color:wheat;" id="upload-web">Click the image upload icon below to upload a image.</p style="color:wheat;"">
-          <p style="color:wheat;" id="upload-mobile">Click the camera icon below to click a image.</p style="color:wheat;"">
+          <p style="color:white; text-align: center;" id="upload-web">Click the image upload icon below to upload a image.</p style="color:white;"">
+          <p style="color:white;" id="upload-mobile">Click the camera icon below to click a image.</p style="color:white;"">
           
           <label for="file">
               <img id="upload-web" src="{{ url_for('static', filename = 'images/upload.png') }}"/>
@@ -23,21 +24,19 @@
         </div>
 
         <br>
-        <button class="classify-button" onclick="classifyWaste()">Classify your waste material</button>
+        <button class="classify-button" onclick="classifyWaste()">Classify Waste Now</button>
       </center>
       <br>
     </div>
 
-    <div class="col-md-6 classy_frame" style="padding-top: 0%;" id="about">
+    <div class="col-md-6 classy_frame" style="padding-top: 0%; padding-bottom: 1%" id="about">
       <center><h3 style="text-transform: capitalize;">About</h3></center>
-      <h4>The world generates at least 3.5 million tons of waste per day and this number is still increasing day by day
-        that's why we need to aware about waste.<br><br>This app is help you to classify your waste with 9 different waste materials.
-        The recycling process of these waste materials are very hard and even it's very difficult to classify these 9 different waste
-        materials at recycling factory.<br><br>But what if every people make 9 trash for 9 different waste materials and put the waste to the 
-        particular trash according to that waste materials this would be much more better for cleaners and recycling factory to classify 
-        and recycle the waste. Everyone should do this because around 70% of waste are not recycled just because that was not classified.
-        <br><br><br><br><br><br>
-      </h4>
+      
+      <p>The world generates approximately 6.1 million tons of waste per day and this number is increasing day by day. It's high time we take major steps towards waste management.
+        <br>
+        I have developed this machine learning (deep learning) model that can classify 9 categories of waste. When a random image of waste is fed into the model, it identifies the material in the image and classifies it as one of the 9 categories: Light Bulb, Paper, Plastic, Organic Waste, Glass, Batteries, Clothes, Metal and E-waste.
+      </p>
+      
     </div>
   </div>
 
@@ -45,12 +44,12 @@
     <br>
     <hr>
     <h3 id="video-title"></h3>
-    <div class="col-md-6 col-xs-6 classy_frame" style="padding-top: 0%; padding-bottom: 2%;">
+    <div class="col-md-6 col-xs-6 classy_frame" style="padding-top: 2%; padding-bottom: 2%;">
       <div class="embed-responsive embed-responsive-16by9"> 
         <iframe id="video1" width="560" height="315" src="https://www.youtube.com/embed/zO3jFKiqmHo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;" allowfullscreen></iframe>
       </div>
     </div>
-    <div class="col-md-6 col-xs-6 classy_frame" style="padding-top: 0%; padding-bottom: 2%;">
+    <div class="col-md-6 col-xs-6 classy_frame" style="padding-top: 2%; padding-bottom: 2%;">
       <div class="embed-responsive embed-responsive-16by9"> 
         <iframe id="video2" width="560" height="315" src="https://www.youtube.com/embed/I_fUpP-hq3A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;" allowfullscreen></iframe>
       </div>
@@ -60,15 +59,15 @@
 	<div class="row" id="what-if">
     <br>
     <hr>
-    <div class="col-md-6 col-xs-6 classy_frame" style="padding-top: 0%; padding-bottom: 2%;">
-      <center><h2 style="text-transform: capitalize;">What If We Stopped Recycling?</h2></center>
+    <div class="col-md-6 col-xs-6 classy_frame" style="padding-top: 2%; padding-bottom: 2%;">
+      <!-- <center><h2 style="text-transform: capitalize;">What If We Stopped Recycling?</h2></center> -->
 
       <div class="embed-responsive embed-responsive-16by9"> 
         <iframe width="560" height="315" src="https://www.youtube.com/embed/8fFJOzXxB54" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;" allowfullscreen></iframe>
       </div>
     </div>
-    <div class="col-md-6 col-xs-6 classy_frame" style="padding-top: 0%; padding-bottom: 2%;">
-      <center><h2 style="text-transform: capitalize;">What If We Created No Waste?</h2></center>
+    <div class="col-md-6 col-xs-6 classy_frame" style="padding-top: 2%; padding-bottom: 2%;">
+      <!-- <center><h2 style="text-transform: capitalize;">What If We Created No Waste?</h2></center> -->
 
       <div class="embed-responsive embed-responsive-16by9"> 
         <iframe width="560" height="315" src="https://www.youtube.com/embed/wWbL7Mv2MFw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;" allowfullscreen></iframe>
@@ -81,7 +80,7 @@
     <br>
     <hr>
     <h3>Why We Need Awareness</h3>
-    <div class="col-md-12 classy_frame" style="padding-top: 0%; padding-bottom: 2%;">
+    <div class="col-md-12 classy_frame" style="padding-top: 2%; padding-bottom: 2%;">
       <div class="embed-responsive embed-responsive-16by9"> 
         <iframe width="560" height="315" src="https://www.youtube.com/embed/NhF4pXBNfq8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;" allowfullscreen></iframe>
       </div>
@@ -92,10 +91,10 @@
     <br>
     <hr>
     <div class="col-md-6 col-xs-6 classy_frame" style="padding-top: 0%;">
-      <h4>They don’t dive into the swimming pool they dive into the mud. We can't even imagine how they would feel.</h4>
+      <h4>They don’t dive into a swimming pool, they dive into muck.</h4>
     </div>
     <div class="col-md-6 col-xs-6 classy_frame" style="padding-top: 0%;">
-      <h4>Your one step to waste recycling can make a cleaner’s life 10 minutes better.<br> &nbsp;</h4>
+      <h4>Your one step towards waste management can make a cleaner’s life 10 times better.</h4>
     </div>
   </div>
 </div>
@@ -173,7 +172,7 @@
           var about = document.getElementById("about");
           var videotitle = document.getElementById("video-title");
 
-          about.innerHTML = "<center><h3>Waste classified as <b style='background-color: #0b2438;'>" + predicted_value + "</b> material</h3></center><h4>"+ details +"</h4>";
+          about.innerHTML = "<center><h3>Waste classified as <b style='background-color: #0b2438;'>" + predicted_value + "</b> waste.</h3></center><h4>"+ details +"</h4>";
           videotitle.innerHTML = "How "+ predicted_value +" Recycling Works?";
 
           document.getElementById("video1").setAttribute("src", "https://www.youtube.com/embed/" + video1);
