@@ -36,4 +36,5 @@ def page_not_found(e):
     return render_template("404.html"), 404
 
 if __name__ == "__main__":
-    application.run()
+    from waitress import serve
+    serve(application, host="127.0.0.1", port=8080)
