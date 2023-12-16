@@ -3,98 +3,107 @@
 
 <div class="container">
   <br>
-	<div class="row">
-    <div class="col-md-6 classy_frame" style="padding-top: 0%;">
-      <center><h3 style="text-transform: capitalize;">Classify Waste</h3></center>
-      <br>
-      <center><img id="preview" src="{{ url_for('static', filename = 'images/waste_bins.png') }}" style="border-radius: 6px;" height="90%" width="90%" title = "client pic"></center>
-      
-      <center>
-        <br>
-        <div class="image-upload">
-          <p style="color:white; text-align: center;" id="upload-web">Click the image upload icon below to upload a image.</p style="color:white;"">
-          <p style="color:white;" id="upload-mobile">Click the camera icon below to click a image.</p style="color:white;"">
-          
-          <label for="file">
-              <img id="upload-web" src="{{ url_for('static', filename = 'images/upload.png') }}"/>
-              <img id="upload-mobile" src="{{ url_for('static', filename = 'images/camera.png') }}"/>
-
-          </label>
-          <input type="file" name="file" id="file" onchange="previewImage()">
-        </div>
-
-        <br>
-        <button class="classify-button" onclick="classifyWaste()">Classify Waste Now</button>
-      </center>
-      <br>
+  <!-- <div class="row"> -->
+  <div class="row-md-6 classy_frame" id ="classify-waste" style="padding: 3% 0% 5% 5%; ">
+    <div style="justify-content: center; align-items: center; display: flex; padding-right: 5%;">
+    <h3 id="result-display">Classify Waste</h3>
     </div>
+    <div class="container" style="width: auto; height: 400px; padding: 0%">
+      <div class="col-md-6" style="padding: 1%; border:2px; border-color: aliceblue; border-style: dashed; border-radius: 20px; width: 50%; height: 100%;" >
+        <img id="preview" src="{{ url_for('static', filename = 'images/hint_text.png') }}"
+            style="border-radius: 20px; max-width: 80%; max-height: 100%; min-height: min-content;" title="client pic">
+      </div>
+      <div class="col-md-6" style="padding: 1%; width:50%; height: 100%;" >
+          <div class="image-upload">
+            <!-- <p style="color:#ABB0B1; text-align: center;" id="upload-web">Click the image upload icon below to upload a
+          image.</p> -->
+            <!-- <p style="color:#ABB0B1;" id="upload-mobile">Click the camera icon below to click a image.</p> -->
 
-    <div class="col-md-6 classy_frame" style="padding-top: 0%; padding-bottom: 1%" id="about">
-      <center><h3 style="text-transform: capitalize;">About</h3></center>
-      
-      <p>The world generates approximately 6.1 million tons of waste per day and this number is increasing day by day. It's high time we take major steps towards waste management.
-        <br>
-        I have developed this machine learning (deep learning) model that can classify 9 categories of waste. When a random image of waste is fed into the model, it identifies the material in the image and classifies it as one of the 9 categories: Light Bulb, Paper, Plastic, Organic Waste, Glass, Batteries, Clothes, Metal and E-waste.
-      </p>
-      
+            <label for="file">
+              <img id="upload-web" src="{{ url_for('static', filename = 'images/upload.png') }}" />
+              <img id="upload-mobile" src="{{ url_for('static', filename = 'images/camera.png') }}" />
+            </label>
+            <input type="file" name="file" id="file" onchange="previewImage()">
+          </div>
+          <button class="classify-button" onclick="classifyWaste()">Classify Waste Now</button>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="row-md-6 classy_frame" id="about">
+
+    <h3 style="align-items: center;">About</h3>
+
+    <p>The world generates approximately 6.1 million tons of waste per day and this number is increasing day by day.
+      It's high time we take major steps towards waste management.
+      <br>
+      <br>
+      We have developed this machine learning (deep learning) model that can classify 9 categories of waste. When a
+      random image of waste is fed into the model, it identifies the material in the image and classifies it as one of
+      the 9 categories: Light Bulb, Paper, Plastic, Organic, Glass, Battery, Clothing, Metal and E-waste.
+    </p>
+
+  </div>
+
+  <div class="row" id="recycling-videos">
+    <br>
+     
+    <h3 id="video-title" style="margin: 0%;"></h3>
+    <div class="col-md-6 col-xs-6 classy_frame"  >
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe id="video1" width="560" height="315" src="https://www.youtube.com/embed/zO3jFKiqmHo" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="col-md-6 col-xs-6 classy_frame"  >
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe id="video2" width="560" height="315" src="https://www.youtube.com/embed/I_fUpP-hq3A" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;" allowfullscreen></iframe>
+      </div>
     </div>
   </div>
 
-	<div class="row" id="recycling-videos">
+  <div class="row" id="what-if">
     <br>
-    <hr>
-    <h3 id="video-title"></h3>
-    <div class="col-md-6 col-xs-6 classy_frame" style="padding-top: 2%; padding-bottom: 2%;">
-      <div class="embed-responsive embed-responsive-16by9"> 
-        <iframe id="video1" width="560" height="315" src="https://www.youtube.com/embed/zO3jFKiqmHo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;" allowfullscreen></iframe>
-      </div>
-    </div>
-    <div class="col-md-6 col-xs-6 classy_frame" style="padding-top: 2%; padding-bottom: 2%;">
-      <div class="embed-responsive embed-responsive-16by9"> 
-        <iframe id="video2" width="560" height="315" src="https://www.youtube.com/embed/I_fUpP-hq3A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;" allowfullscreen></iframe>
-      </div>
-    </div>
-  </div>
-
-	<div class="row" id="what-if">
-    <br>
-    <hr>
-    <div class="col-md-6 col-xs-6 classy_frame" style="padding-top: 2%; padding-bottom: 2%;">
+     
+    <div class="col-md-6 col-xs-6 classy_frame"  >
       <!-- <center><h2 style="text-transform: capitalize;">What If We Stopped Recycling?</h2></center> -->
 
-      <div class="embed-responsive embed-responsive-16by9"> 
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/8fFJOzXxB54" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;" allowfullscreen></iframe>
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/8fFJOzXxB54" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;" allowfullscreen></iframe>
       </div>
     </div>
-    <div class="col-md-6 col-xs-6 classy_frame" style="padding-top: 2%; padding-bottom: 2%;">
+    <div class="col-md-6 col-xs-6 classy_frame"  >
       <!-- <center><h2 style="text-transform: capitalize;">What If We Created No Waste?</h2></center> -->
 
-      <div class="embed-responsive embed-responsive-16by9"> 
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/wWbL7Mv2MFw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;" allowfullscreen></iframe>
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/wWbL7Mv2MFw" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;" allowfullscreen></iframe>
       </div>
     </div>
   </div>
 
-  
-	<div class="row" id="motivation">
+
+  <div class="row" id="motivation">
     <br>
-    <hr>
-    <h3>Why We Need Awareness</h3>
-    <div class="col-md-12 classy_frame" style="padding-top: 2%; padding-bottom: 2%;">
-      <div class="embed-responsive embed-responsive-16by9"> 
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/NhF4pXBNfq8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;" allowfullscreen></iframe>
+     
+    <h3 style="margin: 0%">Why care about waste management?</h3>
+    <div class="col-md-12 classy_frame"  >
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/NhF4pXBNfq8" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;" allowfullscreen></iframe>
       </div>
     </div>
   </div>
 
   <div class="row" id="quotes">
-    <br>
-    <hr>
-    <div class="col-md-6 col-xs-6 classy_frame" style="padding-top: 0%;">
-      <h4>They don’t dive into a swimming pool, they dive into muck.</h4>
+    <div class="col-md-6 col-xs-6 classy_frame" style="padding-top: 0%; padding-bottom: 0%;">
+      <h4 style="padding-bottom: 0%;">"They don’t dive into a swimming pool, they dive into muck."</h4>
     </div>
-    <div class="col-md-6 col-xs-6 classy_frame" style="padding-top: 0%;">
-      <h4>Your one step towards waste management can make a cleaner’s life 10 times better.</h4>
+    <div class="col-md-6 col-xs-6 classy_frame" style="padding-top: 0%; padding-bottom: 0%;">
+      <h4 style="padding-bottom: 0%;">"Your one step towards waste management can make a cleaner’s life 10 times better."</h4>
     </div>
   </div>
 </div>
@@ -111,27 +120,27 @@
   motivation.style.display = "none";
   quotes.style.display = "none";
   recyclingvideos.style.display = "none";
-  
-  function previewImage(){
-      
-    var file = document.getElementById("file").files;
-    if(file.length>0){
-      var fileName = file[0].name;
-      var allowed_extensions = new Array("jpeg", "jpg","png");
-      var file_extension = fileName.split('.').pop().toLowerCase(); 
 
-      if(allowed_extensions[0] == file_extension || allowed_extensions[1] == file_extension || allowed_extensions[2] == file_extension){
+  function previewImage() {
+
+    var file = document.getElementById("file").files;
+    if (file.length > 0) {
+      var fileName = file[0].name;
+      var allowed_extensions = new Array("jpeg", "jpg", "png");
+      var file_extension = fileName.split('.').pop().toLowerCase();
+
+      if (allowed_extensions[0] == file_extension || allowed_extensions[1] == file_extension || allowed_extensions[2] == file_extension) {
         var imgObj = document.getElementById("preview");
         var fileReader = new FileReader();
 
-        fileReader.onload = function(event){
+        fileReader.onload = function (event) {
           document.getElementById("preview").setAttribute("src", event.target.result);
           imgData = event.target.result;
         };
 
         fileReader.readAsDataURL(file[0]);
       }
-      else{
+      else {
         document.getElementById("file").value = "";
         document.getElementById("errorTitle").innerHTML = "Error - Only Image File Acceptable";
         document.getElementById("errorMessage").innerHTML = "We only accept image with .jpeg .jpg or .png extensions.";
@@ -139,13 +148,13 @@
 
       }
 
-      
+
     }
   }
 
-  function classifyWaste(){
+  function classifyWaste() {
     var file = document.getElementById("file").files;
-    if(file.length > 0){
+    if (file.length > 0) {
       loading.style.display = "block";
       whatif.style.display = "block";
       motivation.style.display = "block";
@@ -163,29 +172,29 @@
         data: form_data,
         type: 'post',
         success: function (data) {
-      
           var predicted_value = data["predicted_value"];
           var details = data["details"];
           var video1 = data["video1"];
           var video2 = data["video2"];
 
           var about = document.getElementById("about");
+          var resultdisplay = document.getElementById("result-display");
           var videotitle = document.getElementById("video-title");
 
-          about.innerHTML = "<center><h3>Waste classified as <b style='background-color: #0b2438;'>" + predicted_value + "</b> waste.</h3></center><h4>"+ details +"</h4>";
-          videotitle.innerHTML = "How "+ predicted_value +" Recycling Works?";
+          about.innerHTML = "<h3><b>" + predicted_value + "</b></h3><h4>" + details + "</h4>";
+          resultdisplay.innerHTML = "That is <b>" + predicted_value + "</b>." ;
+          videotitle.innerHTML = "How " + predicted_value + " Recycling Works?";
 
           document.getElementById("video1").setAttribute("src", "https://www.youtube.com/embed/" + video1);
           document.getElementById("video2").setAttribute("src", "https://www.youtube.com/embed/" + video2);
 
           loading.style.display = "none";
         }
-
       });
     }
-    else{
-      document.getElementById("errorTitle").innerHTML = "Error - Image not uploaded";
-      document.getElementById("errorMessage").innerHTML = "Please upload image of your waste material.";
+    else {
+      document.getElementById("errorTitle").innerHTML = "Error: Image not uploaded";
+      document.getElementById("errorMessage").innerHTML = "Please upload the image first.";
       $("#errorPopup").modal("show");
     }
   }
