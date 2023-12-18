@@ -1,34 +1,35 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="container">
+<div id="content" class="container" style="padding-top: 100px;">
   <br>
   <!-- <div class="row"> -->
-  <div class="row-md-6 classy_frame" id ="classify-waste" style="padding: 3% 0% 5% 5%; ">
+  <div class="row-md-6 classy_frame" id="classify-waste" style="padding: 3% 0% 5% 5%; ">
     <div style="justify-content: center; align-items: center; display: flex; padding-right: 5%;">
-    <h3 id="result-display">Classify Waste</h3>
+      <h3 id="result-display">Classify Waste</h3>
     </div>
     <div class="container" style="width: auto; height: 400px; padding: 0%">
-      <div class="col-md-6" style="padding: 1%; border:2px; border-color: aliceblue; border-style: dashed; border-radius: 20px; width: 50%; height: 100%;" >
+      <div class="col-md-6"
+        style="padding: 1%; border:2px; border-color: aliceblue; border-style: dashed; border-radius: 20px; width: 50%; height: 100%;">
         <img id="preview" src="{{ url_for('static', filename = 'images/hint_text.png') }}"
-            style="border-radius: 20px; max-width: 80%; max-height: 100%; min-height: min-content;" title="client pic">
+          style="border-radius: 20px; max-width: 80%; max-height: 100%; min-height: min-content;" title="client pic">
       </div>
-      <div class="col-md-6" style="padding: 1%; width:50%; height: 100%;" >
-          <div class="image-upload">
-            <!-- <p style="color:#ABB0B1; text-align: center;" id="upload-web">Click the image upload icon below to upload a
+      <div class="col-md-6" style="padding: 1%; width:50%; height: 100%;">
+        <div class="image-upload">
+          <!-- <p style="color:#ABB0B1; text-align: center;" id="upload-web">Click the image upload icon below to upload a
           image.</p> -->
-            <!-- <p style="color:#ABB0B1;" id="upload-mobile">Click the camera icon below to click a image.</p> -->
+          <!-- <p style="color:#ABB0B1;" id="upload-mobile">Click the camera icon below to click a image.</p> -->
 
-            <label for="file">
-              <img id="upload-web" src="{{ url_for('static', filename = 'images/upload.png') }}" />
-              <img id="upload-mobile" src="{{ url_for('static', filename = 'images/camera.png') }}" />
-            </label>
-            <input type="file" name="file" id="file" onchange="previewImage()">
-          </div>
-          <button class="classify-button" onclick="classifyWaste()">Classify Waste Now</button>
+          <label for="file">
+            <img id="upload-web" src="{{ url_for('static', filename = 'images/upload.png') }}" />
+            <img id="upload-mobile" src="{{ url_for('static', filename = 'images/camera.png') }}" />
+          </label>
+          <input type="file" name="file" id="file" onchange="previewImage()">
+        </div>
+        <button class="classify-button" onclick="classifyWaste()">Classify Waste Now</button>
       </div>
     </div>
-    
+
   </div>
 
   <div class="row-md-6 classy_frame" id="about">
@@ -48,15 +49,15 @@
 
   <div class="row" id="recycling-videos">
     <br>
-     
+
     <h3 id="video-title" style="margin: 0%;"></h3>
-    <div class="col-md-6 col-xs-6 classy_frame"  >
+    <div class="col-md-6 col-xs-6 classy_frame">
       <div class="embed-responsive embed-responsive-16by9">
         <iframe id="video1" width="560" height="315" src="https://www.youtube.com/embed/zO3jFKiqmHo" frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;" allowfullscreen></iframe>
       </div>
     </div>
-    <div class="col-md-6 col-xs-6 classy_frame"  >
+    <div class="col-md-6 col-xs-6 classy_frame">
       <div class="embed-responsive embed-responsive-16by9">
         <iframe id="video2" width="560" height="315" src="https://www.youtube.com/embed/I_fUpP-hq3A" frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;" allowfullscreen></iframe>
@@ -66,8 +67,8 @@
 
   <div class="row" id="what-if">
     <br>
-     
-    <div class="col-md-6 col-xs-6 classy_frame"  >
+
+    <div class="col-md-6 col-xs-6 classy_frame">
       <!-- <center><h2 style="text-transform: capitalize;">What If We Stopped Recycling?</h2></center> -->
 
       <div class="embed-responsive embed-responsive-16by9">
@@ -75,7 +76,7 @@
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;" allowfullscreen></iframe>
       </div>
     </div>
-    <div class="col-md-6 col-xs-6 classy_frame"  >
+    <div class="col-md-6 col-xs-6 classy_frame">
       <!-- <center><h2 style="text-transform: capitalize;">What If We Created No Waste?</h2></center> -->
 
       <div class="embed-responsive embed-responsive-16by9">
@@ -88,9 +89,9 @@
 
   <div class="row" id="motivation">
     <br>
-     
+
     <h3 style="margin: 0%">Why care about waste management?</h3>
-    <div class="col-md-12 classy_frame"  >
+    <div class="col-md-12 classy_frame">
       <div class="embed-responsive embed-responsive-16by9">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/NhF4pXBNfq8" frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;" allowfullscreen></iframe>
@@ -103,7 +104,8 @@
       <h4 style="padding-bottom: 0%;">"They don’t dive into a swimming pool, they dive into muck."</h4>
     </div>
     <div class="col-md-6 col-xs-6 classy_frame" style="padding-top: 0%; padding-bottom: 0%;">
-      <h4 style="padding-bottom: 0%;">"Your one step towards waste management can make a cleaner’s life 10 times better."</h4>
+      <h4 style="padding-bottom: 0%;">"Your one step towards waste management can make a cleaner’s life 10 times
+        better."</h4>
     </div>
   </div>
 </div>
@@ -182,7 +184,7 @@
           var videotitle = document.getElementById("video-title");
 
           about.innerHTML = "<h3><b>" + predicted_value + "</b></h3><h4>" + details + "</h4>";
-          resultdisplay.innerHTML = "That is <b>" + predicted_value + "</b>." ;
+          resultdisplay.innerHTML = "That is <b>" + predicted_value + "</b>.";
           videotitle.innerHTML = "How " + predicted_value + " Recycling Works?";
 
           document.getElementById("video1").setAttribute("src", "https://www.youtube.com/embed/" + video1);
@@ -198,6 +200,18 @@
       $("#errorPopup").modal("show");
     }
   }
+
+  window.addEventListener('scroll', function () {
+    var header = document.getElementById('header');
+    var content = document.getElementById('content');
+    var contentOffset = content.offsetTop;
+
+    if (window.pageYOffset > contentOffset) {
+      header.classList.add('translucent-header');
+    } else {
+      header.classList.remove('translucent-header');
+    }
+  });
 </script>
 
 

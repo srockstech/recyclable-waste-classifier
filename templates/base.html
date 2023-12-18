@@ -87,6 +87,17 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      position: fixed;
+
+      /* top: 0; */
+      /* left: 0; */
+      width: 94%;
+      z-index: 999;
+    }
+
+    .translucent-header {
+      background-color: rgba(34, 35, 39, 0.8);
+      /* Adjust the transparency as needed */
     }
 
     #brand-id {
@@ -325,13 +336,13 @@
     }
   </style>
 
-  
+
   {{ JSGlue.include() }} <!-- this is use for use url_for() from javascript -->
 </head>
 
 <body>
 
-  <header>
+  <header id="header">
     <span id="brand-id">
       <a href=""><img id="logo-img" src="{{ url_for('static', filename = 'images/swachhta_logo.png') }}"></img></a>
       <span class="app-name">
