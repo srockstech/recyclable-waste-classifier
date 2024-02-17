@@ -37,8 +37,8 @@ def page_not_found(e):
 
 if __name__ == "__main__":
     # For Production:
-    from waitress import serve
-    serve(application, host="0.0.0.0", port=22)
+    # from waitress import serve
+    # serve(application, host="0.0.0.0", port=22)
 
     # For Development:
-    # application.run(debug=True)
+    application.run(debug=True)
