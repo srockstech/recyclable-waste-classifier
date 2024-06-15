@@ -29,6 +29,12 @@ def classifywaste():
     os.remove(image_path)
     return jsonify(predicted_value=predicted_value, details=details, video1=video1, video2=video2)
 
+@application.before_request
+def before_request():
+    if not request.is_secure:
+        url = request.url.replace('http://', 'https://', 1)
+        return redirect(url, code=301)
+
 # here is route of 404 means page not found error
 @application.errorhandler(404)
 def page_not_found(e):
@@ -36,9 +42,14 @@ def page_not_found(e):
     return render_template("404.html"), 404
 
 if __name__ == "__main__":
+
+    context = (
+        'C:/Users/srockstech/Desktop/swachhta/waste-classifier/certificate/fullchain.pem',
+        'C:/Users/srockstech/Desktop/swachhta/waste-classifier/certificate/privkey.pem'
+    )
     # For Production:
-    from waitress import serve
-    serve(application, host="0.0.0.0", port=22)
+    # from waitress import serve
+    application.run(host="0.0.0.0", port=443, ssl_context=context)
 
     # For Development:
     # application.run(debug=True)
