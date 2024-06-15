@@ -48,8 +48,8 @@ if __name__ == "__main__":
         'C:/Certbot/archive/swachhta.in/privkey1.pem'
     )
     # For Production:
-    # from waitress import serve
+    from waitress import serve
     application.run(host="0.0.0.0", port=443, ssl_context=context)
 
     # For Development:
-    application.run(debug=True)
+    # application.run(debug=True)
