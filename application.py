@@ -44,8 +44,8 @@ def page_not_found(e):
 if __name__ == "__main__":
 
     context = (
-        'C:/Users/srockstech/Desktop/swachhta/waste-classifier/certificate/fullchain.pem',
-        'C:/Users/srockstech/Desktop/swachhta/waste-classifier/certificate/privkey.pem'
+        'C:/Certbot/live/swachhta.in/fullchain.pem',
+        'C:/Certbot/live/swachhta.in/privkey.pem'
     )
     # For Production:
     # from waitress import serve
