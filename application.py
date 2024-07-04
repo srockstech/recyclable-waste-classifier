@@ -3,8 +3,26 @@ from flask_jsglue import JSGlue
 import util
 import os
 from werkzeug.utils import secure_filename
+import boto3
 
 application = Flask(__name__)
+
+def download_from_s3(bucket_name, key, download_path):
+    s3 = boto3.client('s3', region_name=os.environ['REGION'], aws_access_key_id=os.environ['ACCESS_KEY_ID'], aws_secret_access_key=os.environ['SECRET_ACCESS_KEY'])
+    s3.download_file(bucket_name, key, download_path)
+
+# Retrieve environment variables
+bucket_name = os.environ['S3_BUCKET_NAME']
+cert_key = os.environ['CERT_KEY']
+key_key = os.environ['KEY_KEY']
+
+# Define paths for the download certificate and key
+cert_path = '/temp/cert.pem'
+key_path = '/temp/key.pem'
+
+# Download the certificate and key from S3
+download_from_s3(bucket_name, cert_key, cert_path)
+download_from_s3(bucket_name, key_key, key_path)
 
 # JSGlue is use for url_for() working inside javascript which is help us to navigate the url
 jsglue = JSGlue() # create a object of JsGlue
@@ -44,8 +62,8 @@ def page_not_found(e):
 if __name__ == "__main__":
 
     context = (
-        'C:/Certbot/archive/swachhta.in/fullchain1.pem',
-        'C:/Certbot/archive/swachhta.in/privkey1.pem'
+        cert_path,
+        key_path
     )
     # For Production:
     from waitress import serve
