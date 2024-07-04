@@ -1,0 +1,25 @@
+branch-defaults:
+  main:
+    environment: flask-env
+    group_suffix: null
+environment-defaults:
+  flask-env:
+    branch: main
+    repository: swachhta-website
+global:
+  application_name: waste-classifier
+  branch: main
+  default_ec2_keyname: aws-eb
+  default_platform: Python 3.11 running on 64bit Amazon Linux 2023
+  default_region: us-east-1
+  include_git_submodules: true
+  instance_profile: null
+  platform_name: null
+  platform_version: null
+  profile: eb-cli
+  repository: swachhta-website
+  sc: git
+  workspace_type: Application
+option_settings:
+  aws:elasticbeanstalk:container:python:
+    WSGIPath: application:application
