@@ -29,11 +29,11 @@ def classifywaste():
     os.remove(image_path)
     return jsonify(predicted_value=predicted_value, details=details, video1=video1, video2=video2)
 
-@application.before_request
-def before_request():
-    if not request.is_secure:
-        url = request.url.replace('http://', 'https://', 1)
-        return redirect(url, code=301)
+# @application.before_request
+# def before_request():
+#     if not request.is_secure:
+#         url = request.url.replace('http://', 'https://', 1)
+#         return redirect(url, code=301)
 
 # here is route of 404 means page not found error
 @application.errorhandler(404)
@@ -43,13 +43,13 @@ def page_not_found(e):
 
 if __name__ == "__main__":
 
-    context = (
-        'C:/Certbot/archive/swachhta.in/fullchain1.pem',
-        'C:/Certbot/archive/swachhta.in/privkey1.pem'
-    )
+    # context = (
+    #     'C:/Certbot/archive/swachhta.in/fullchain1.pem',
+    #     'C:/Certbot/archive/swachhta.in/privkey1.pem'
+    # )
     # For Production:
-    from waitress import serve
-    application.run(host="0.0.0.0", port=443, ssl_context=context)
+    # from waitress import serve
+    application.run()
 
     # For Development:
     # application.run(debug=True)
