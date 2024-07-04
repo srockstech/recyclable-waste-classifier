@@ -17,8 +17,8 @@ cert_key = os.environ['CERT_KEY']
 key_key = os.environ['KEY_KEY']
 
 # Define paths for the download certificate and key
-cert_path = '/temp/cert.pem'
-key_path = '/temp/key.pem'
+cert_path = '/tmp/cert.pem'
+key_path = '/tmp/key.pem'
 
 # Download the certificate and key from S3
 download_from_s3(bucket_name, cert_key, cert_path)
